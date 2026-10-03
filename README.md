@@ -71,6 +71,21 @@ tool, and use the Jobs control to see progress or cancel an active operation.
 - **Keyboard-friendly:** key controls expose accessible names and can be used
   without relying only on a mouse.
 
+## See it in action
+
+### Home workspace
+
+Search the available workflows or filter them by PDF and image tasks.
+
+![PI-Studio Home workspace](docs/images/home.png)
+
+### Extract Pages
+
+Preview document pages visually, select the pages you need, and open individual
+pages in fullscreen before creating the output.
+
+![PI-Studio Extract Pages workspace](docs/images/extract-pages.png)
+
 ## Download the app
 
 Download the packaged desktop application for your operating system. No Python
