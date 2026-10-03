@@ -1,0 +1,15 @@
+{
+  "include": [
+    "pdf_toolkit/validation.py",
+    "pdf_toolkit/engine/common.py",
+    "pdf_toolkit/workers/task_worker.py",
+    "pdf_toolkit/workers/operation_service.py"
+  ],
+  "exclude": [".venv", "build", "dist"],
+  "venvPath": ".",
+  "venv": ".venv",
+  "pythonVersion": "3.11",
+  "typeCheckingMode": "basic",
+  "reportMissingImports": "error",
+  "reportMissingTypeStubs": false
+}
