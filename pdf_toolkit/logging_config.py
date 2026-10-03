@@ -15,7 +15,7 @@ def log_directory() -> Path:
         return base / "PI-Studio" / "logs"
     if os.name == "posix" and os.uname().sysname == "Darwin":
         return Path.home() / "Library" / "Logs" / "PI-Studio"
-    return Path(os.environ.get("XDG_STATE_HOME", Path.home() / ".local/state")) / "pdf-toolkit"
+    return Path(os.environ.get("XDG_STATE_HOME", Path.home() / ".local/state")) / "PI-Studio"
 
 
 def configure_logging() -> logging.Logger:

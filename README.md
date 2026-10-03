@@ -2,7 +2,7 @@
 
 > A calm, private workspace for everyday PDF and image work.
 
-P keeps file tasks focused and understandable. Choose a tool, preview the result,
+PI-Studio keeps file tasks focused and understandable. Choose a tool, preview the result,
 make the change, and save the output without sending documents to a website or
 learning a complicated editor.
 
