@@ -1,4 +1,4 @@
-# P — Offline PDF Studio
+# PI-Studio
 
 > A calm, private workspace for everyday PDF and image work.
 
@@ -6,7 +6,7 @@ P keeps file tasks focused and understandable. Choose a tool, preview the result
 make the change, and save the output without sending documents to a website or
 learning a complicated editor.
 
-![P — Offline PDF Studio home screen](https://raw.githubusercontent.com/Aditya-602/PI-Studio/main/docs/images/home.png)
+![PI-Studio home screen](https://raw.githubusercontent.com/Aditya-602/PI-Studio/main/docs/images/home.png)
 
 ## Why people use it
 
@@ -113,8 +113,8 @@ There are two ways to share the app.
 Once a GitHub release has been created, users can download the correct package
 directly:
 
-- **macOS:** [Download for macOS](https://github.com/Aditya-602/PI-Studio/releases/latest/download/PDFToolkit-macOS.zip)
-- **Windows:** [Download for Windows](https://github.com/Aditya-602/PI-Studio/releases/latest/download/PDFToolkit-Windows.zip)
+- **macOS:** [Download PI-Studio for macOS](https://github.com/Aditya-602/PI-Studio/releases/latest/download/PI-Studio-macOS.zip)
+- **Windows:** [Download PI-Studio for Windows](https://github.com/Aditya-602/PI-Studio/releases/latest/download/PI-Studio-Windows.zip)
 
 These files are generated automatically by the
 [`Build desktop apps`](.github/workflows/build-release.yml) workflow whenever
@@ -125,8 +125,8 @@ Build the package on the same operating system as the computer that will run it:
 
 | Destination | Build on | Result |
 | --- | --- | --- |
-| Mac | macOS | `dist/PDFToolkit.app` |
-| Windows | Windows | `dist/PDFToolkit/` containing `PDFToolkit.exe` |
+| Mac | macOS | `dist/PI-Studio.app` |
+| Windows | Windows | `dist/PI-Studio/` containing `PI-Studio.exe` |
 
 PyInstaller bundles Python and the application dependencies into the package.
 The recipient does **not** need to install Python, PySide6, PyMuPDF, Pillow, or
@@ -143,10 +143,10 @@ python -m pip install -r requirements.txt
 python build_app.py
 ```
 
-Send `dist/PDFToolkit.app` to another Mac. A zip file is convenient:
+Send `dist/PI-Studio.app` to another Mac. A zip file is convenient:
 
 ```bash
-ditto -c -k --sequesterRsrc --keepParent dist/PDFToolkit.app PDFToolkit-macOS.zip
+ditto -c -k --sequesterRsrc --keepParent dist/PI-Studio.app PI-Studio-macOS.zip
 ```
 
 The build must match the recipient’s Mac architecture. Build on an Apple
@@ -170,11 +170,11 @@ python -m pip install -r requirements.txt
 python build_app.py
 ```
 
-Zip the complete `dist\PDFToolkit\` folder and send it to the other Windows
+Zip the complete `dist\PI-Studio\` folder and send it to the other Windows
 computer. The recipient should extract the entire folder and start:
 
 ```text
-PDFToolkit\PDFToolkit.exe
+PI-Studio\PI-Studio.exe
 ```
 
 Do not send only the `.exe`; the other files in the packaged folder are part of

@@ -12,9 +12,9 @@ from pathlib import Path
 def log_directory() -> Path:
     if os.name == "nt":
         base = Path(os.environ.get("LOCALAPPDATA", Path.home() / "AppData/Local"))
-        return base / "PDFToolkit" / "logs"
+        return base / "PI-Studio" / "logs"
     if os.name == "posix" and os.uname().sysname == "Darwin":
-        return Path.home() / "Library" / "Logs" / "PDFToolkit"
+        return Path.home() / "Library" / "Logs" / "PI-Studio"
     return Path(os.environ.get("XDG_STATE_HOME", Path.home() / ".local/state")) / "pdf-toolkit"
 
 

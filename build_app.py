@@ -11,7 +11,7 @@ def main() -> int:
         "-m",
         "PyInstaller",
         "--name",
-        "PDFToolkit",
+        "PI-Studio",
         "--windowed",
         "--onedir",
         "--clean",

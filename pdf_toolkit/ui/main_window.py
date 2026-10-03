@@ -41,7 +41,7 @@ from pdf_toolkit.preferences import Preferences
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("P — Offline PDF Studio")
+        self.setWindowTitle("PI-Studio")
         self.resize(1440, 920)
         self.setMinimumSize(1100, 720)
         self.setStyleSheet(app_stylesheet())

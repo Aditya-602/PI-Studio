@@ -19,10 +19,10 @@ jobs:
         include:
           - name: macOS
             runner: macos-14
-            archive: PDFToolkit-macOS.zip
+            archive: PI-Studio-macOS.zip
           - name: Windows
             runner: windows-2022
-            archive: PDFToolkit-Windows.zip
+            archive: PI-Studio-Windows.zip
     steps:
       - name: Check out source
         uses: actions/checkout@v4
@@ -41,12 +41,12 @@ jobs:
 
       - name: Package macOS app
         if: runner.os == 'macOS'
-        run: ditto -c -k --sequesterRsrc --keepParent dist/PDFToolkit.app ${{ matrix.archive }}
+        run: ditto -c -k --sequesterRsrc --keepParent dist/PI-Studio.app ${{ matrix.archive }}
 
       - name: Package Windows app
         if: runner.os == 'Windows'
         shell: pwsh
-        run: Compress-Archive -Path dist/PDFToolkit -DestinationPath ${{ matrix.archive }}
+        run: Compress-Archive -Path dist/PI-Studio -DestinationPath ${{ matrix.archive }}
 
       - name: Upload build artifact
         uses: actions/upload-artifact@v4
