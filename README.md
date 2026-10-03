@@ -6,7 +6,7 @@ P keeps file tasks focused and understandable. Choose a tool, preview the result
 make the change, and save the output without sending documents to a website or
 learning a complicated editor.
 
-![P — Offline PDF Studio home screen](docs/images/home.png)
+![P — Offline PDF Studio home screen](https://raw.githubusercontent.com/Aditya-602/PI-Studio/main/docs/images/home.png)
 
 ## Why people use it
 
@@ -76,14 +76,14 @@ tool, and use the Jobs control to see progress or cancel an active operation.
 
 Find the right workflow with search and compact PDF/Image filters.
 
-![Home screen with PDF and Image filters](docs/images/home.png)
+![Home screen with PDF and Image filters](https://raw.githubusercontent.com/Aditya-602/PI-Studio/main/docs/images/home.png)
 
 ### Extract Pages
 
 Preview page thumbnails, select the pages you need, and open any page fullscreen
 without leaving the workspace.
 
-![Extract Pages tool screen](docs/images/extract-pages.png)
+![Extract Pages tool screen](https://raw.githubusercontent.com/Aditya-602/PI-Studio/main/docs/images/extract-pages.png)
 
 ## Getting started
 
@@ -113,11 +113,10 @@ There are two ways to share the app.
 Once a GitHub release has been created, users can download the correct package
 directly:
 
-- **macOS:** `https://github.com/OWNER/REPOSITORY/releases/latest/download/PDFToolkit-macOS.zip`
-- **Windows:** `https://github.com/OWNER/REPOSITORY/releases/latest/download/PDFToolkit-Windows.zip`
+- **macOS:** [Download for macOS](https://github.com/Aditya-602/PI-Studio/releases/latest/download/PDFToolkit-macOS.zip)
+- **Windows:** [Download for Windows](https://github.com/Aditya-602/PI-Studio/releases/latest/download/PDFToolkit-Windows.zip)
 
-Replace `OWNER/REPOSITORY` with the GitHub repository path after publishing
-this project. These files are generated automatically by the
+These files are generated automatically by the
 [`Build desktop apps`](.github/workflows/build-release.yml) workflow whenever
 you push a version tag such as `v1.0.0`.
 
