@@ -6,7 +6,8 @@ PI-Studio keeps file tasks focused and understandable. Choose a tool, preview th
 make the change, and save the output without sending documents to a website or
 learning a complicated editor.
 
-![PI-Studio home screen](https://raw.githubusercontent.com/Aditya-602/PI-Studio/main/docs/images/home.png)
+> **Closed-source product:** This repository contains the public product
+> documentation only. The application source code is not distributed here.
 
 ## Why people use it
 
@@ -70,45 +71,10 @@ tool, and use the Jobs control to see progress or cancel an active operation.
 - **Keyboard-friendly:** key controls expose accessible names and can be used
   without relying only on a mouse.
 
-## See it in action
+## Download the app
 
-### Home
-
-Find the right workflow with search and compact PDF/Image filters.
-
-![Home screen with PDF and Image filters](https://raw.githubusercontent.com/Aditya-602/PI-Studio/main/docs/images/home.png)
-
-### Extract Pages
-
-Preview page thumbnails, select the pages you need, and open any page fullscreen
-without leaving the workspace.
-
-![Extract Pages tool screen](https://raw.githubusercontent.com/Aditya-602/PI-Studio/main/docs/images/extract-pages.png)
-
-## Getting started
-
-### Requirements
-
-- Python 3.11 or newer
-- A desktop environment supported by PySide6
-
-### Install and launch
-
-```bash
-python3 -m venv .venv
-. .venv/bin/activate
-pip install -r requirements.txt
-python main.py
-```
-
-The application opens directly to the local Home workspace. No account,
-subscription, or cloud connection is required.
-
-## Use it on another computer
-
-There are two ways to share the app.
-
-### Option 1: Share a packaged desktop app
+Download the packaged desktop application for your operating system. No Python
+installation, account, subscription, or cloud connection is required.
 
 Once a GitHub release has been created, users can download the correct package
 directly:
@@ -116,121 +82,31 @@ directly:
 - **macOS:** [Download PI-Studio for macOS](https://github.com/Aditya-602/PI-Studio/releases/latest/download/PI-Studio-macOS.zip)
 - **Windows:** [Download PI-Studio for Windows](https://github.com/Aditya-602/PI-Studio/releases/latest/download/PI-Studio-Windows.zip)
 
-These files are generated automatically by the
-[`Build desktop apps`](.github/workflows/build-release.yml) workflow whenever
-you push a version tag such as `v1.0.0`.
+The downloadable packages are built and tested by the PI-Studio maintainers.
+The source repository is intentionally private and is not included in the
+public GitHub repository.
 
-This is the easiest option for someone who should not need Python installed.
-Build the package on the same operating system as the computer that will run it:
+### macOS
 
-| Destination | Build on | Result |
-| --- | --- | --- |
-| Mac | macOS | `dist/PI-Studio.app` |
-| Windows | Windows | `dist/PI-Studio/` containing `PI-Studio.exe` |
+The macOS package is distributed as a zip containing the PI-Studio app. On the
+first launch, macOS may ask you to confirm that you want to open an app
+downloaded from the internet. For the safest experience, download only from
+the official release link above.
 
-PyInstaller bundles Python and the application dependencies into the package.
-The recipient does **not** need to install Python, PySide6, PyMuPDF, Pillow, or
-the HEIC codec separately.
+### Windows
 
-#### Build for macOS
+Extract the complete downloaded PI-Studio folder before launching
+`PI-Studio.exe`. Do not move only the executable out of the folder because the
+other packaged files are required.
 
-On the Mac used for building:
+## Privacy and security
 
-```bash
-python3 -m venv .venv
-. .venv/bin/activate
-python -m pip install -r requirements.txt
-python build_app.py
-```
-
-Send `dist/PI-Studio.app` to another Mac. A zip file is convenient:
-
-```bash
-ditto -c -k --sequesterRsrc --keepParent dist/PI-Studio.app PI-Studio-macOS.zip
-```
-
-The build must match the recipient’s Mac architecture. Build on an Apple
-silicon Mac for Apple silicon Macs, or build on an Intel Mac for Intel Macs.
-For one package that supports both, create a universal Python environment and
-build with universal-compatible dependencies, then test the result on both
-architectures.
-
-An unsigned app may trigger a macOS security warning the first time it opens.
-For a public or business distribution, sign and notarize the app with an Apple
-Developer account before sharing it.
-
-#### Build for Windows
-
-On the Windows PC used for building, open PowerShell:
-
-```powershell
-py -3 -m venv .venv
-.venv\Scripts\Activate.ps1
-python -m pip install -r requirements.txt
-python build_app.py
-```
-
-Zip the complete `dist\PI-Studio\` folder and send it to the other Windows
-computer. The recipient should extract the entire folder and start:
-
-```text
-PI-Studio\PI-Studio.exe
-```
-
-Do not send only the `.exe`; the other files in the packaged folder are part of
-the application. Windows may show a SmartScreen warning for an unsigned
-program. Code-signing the executable is recommended for regular distribution.
-
-### Option 2: Share the source project
-
-Use this when the recipient is a developer who wants to run or modify the
-project. They need Python 3.11 or newer and can follow the installation steps
-above. On Windows, use `.venv\Scripts\Activate.ps1`; on macOS/Linux, use
-`. .venv/bin/activate`.
-
-### Important packaging notes
-
-- Build macOS packages on macOS and Windows packages on Windows.
-- Build separately for Apple silicon and Intel Macs when distributing to both.
-- Test the packaged app on a clean computer before sharing it widely.
-- Keep the complete packaged directory together.
-- User files are processed locally; packaging does not add a cloud service or
-  account requirement.
-
-## Quality and confidence
-
-The project includes automated checks for PDF and image processing, output
-handling, cancellation, background jobs, and validation. Run the main regression
-suite with:
-
-```bash
-python -m pytest -q
-```
+PI-Studio processes files locally and does not require an account or upload
+documents to a cloud service. Keep the application updated and download
+installers only from the official PI-Studio GitHub releases.
 
 ## Technical details
 
-This is a local desktop application built with Python, PySide6, PyMuPDF, Pillow,
-and `pillow-heif`. PDF and image processing lives in `pdf_toolkit/engine/`;
-desktop screens and previews live in `pdf_toolkit/ui/`; background execution is
-managed by `pdf_toolkit/workers/`.
-
-The application validates inputs before work begins. Default safeguards include
-a 512 MB per-file input limit, a 5,000-page PDF limit, a 100-megapixel image
-limit, and an output free-space reserve. HEIC/HEIF support is provided through
-the Pillow HEIF codec.
-
-For maintainers, the complete local quality gate is:
-
-```bash
-python -m pip install -r requirements-dev.txt
-python -m ruff check .
-python -m pyright
-QT_QPA_PLATFORM=offscreen python -m pytest -q
-python -m compileall -q pdf_toolkit main.py tests
-```
-
-The packaged desktop build can be created with:
-
-```bash
-python build_app.py
-```
+PI-Studio is a closed-source desktop application for macOS and Windows. The
+public repository intentionally contains this README only; implementation
+details, build configuration, and automated tests are maintained privately.
