@@ -2,6 +2,8 @@
 
 > A calm, private workspace for everyday PDF and image work.
 
+![PI-Studio Home workspace](docs/images/home.png)
+
 PI-Studio keeps file tasks focused and understandable. Choose a tool, preview the result,
 make the change, and save the output without sending documents to a website or
 learning a complicated editor.
@@ -73,18 +75,30 @@ tool, and use the Jobs control to see progress or cancel an active operation.
 
 ## See it in action
 
-### Home workspace
-
-Search the available workflows or filter them by PDF and image tasks.
-
-![PI-Studio Home workspace](docs/images/home.png)
-
 ### Extract Pages
 
 Preview document pages visually, select the pages you need, and open individual
 pages in fullscreen before creating the output.
 
 ![PI-Studio Extract Pages workspace](docs/images/extract-pages.png)
+
+### Merge PDF
+
+Combine multiple documents into a single organized PDF with visual preview and quick page review.
+
+![PI-Studio Merge PDF workspace](docs/images/merge-pdf.png)
+
+### Compress PDF
+
+Make heavy PDFs lighter, faster, and easier to share across email and messaging with configurable compression presets.
+
+![PI-Studio Compress PDF workspace](docs/images/compress-pdf.png)
+
+### Remove Background
+
+Create clean transparent PNG images directly from simple photo backdrops with real-time tolerance tuning.
+
+![PI-Studio Remove Background workspace](docs/images/remove-background.png)
 
 ## Download the app
 
